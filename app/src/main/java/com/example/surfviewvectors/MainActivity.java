@@ -10,7 +10,6 @@ import com.example.surfviewvectors.engine.Model;
 
 public class MainActivity extends AppCompatActivity {
     Engine engine;
-
     SurfaceView surface;
 
     @Override
