@@ -1,5 +1,6 @@
 package com.example.Terrain.engine;
 
+import android.annotation.SuppressLint;
 import android.graphics.Point;
 import android.graphics.PointF;
 
@@ -25,5 +26,14 @@ public class ComplexPoint extends PointF {
 
     public static Point translatePointToScreen(ComplexPoint point, float hW, float hH) {
         return point.translatePointToScreen(hW, hH);
+    }
+
+    @SuppressLint("DefaultLocale")
+    @Override
+    public String toString() {
+        String str = "[%.1f ; %.1f] ";
+        str=String.format(str,x,y);
+        return str;
+        //return super.toString();
     }
 }

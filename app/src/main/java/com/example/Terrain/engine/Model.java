@@ -6,10 +6,11 @@ public class Model {
     private ArrayList<ComplexPoint> pointArray;
     private final int rows = 100;
     private final int colomns = 100;
-    private final float zMax = 2.4f;
+    private final float zMax = 2.0f;
 
     public Model() {
         pointArray = new ArrayList<>();
+        Terrain terrain = new Terrain(10);
 
         //pointArray.add(new ComplexPoint(0.5f,0.0f,1.0f));
         float xStep = 1.0f / rows;
@@ -22,7 +23,6 @@ public class Model {
                 pCp = new ComplexPoint(x * xStep, -y * yStep, zMax-(y*zStep));
                 pointArray.add(pCp);
             }
-
         }
         xStep = 0;
     }
