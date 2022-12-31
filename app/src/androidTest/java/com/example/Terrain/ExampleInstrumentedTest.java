@@ -1,4 +1,4 @@
-package com.example.surfviewvectors;
+package com.example.Terrain;
 
 import android.content.Context;
 

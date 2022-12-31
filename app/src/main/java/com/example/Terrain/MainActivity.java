@@ -1,4 +1,4 @@
-package com.example.surfviewvectors;
+package com.example.Terrain;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,8 +7,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.surfviewvectors.engine.Engine;
-import com.example.surfviewvectors.engine.Model;
+import com.example.Terrain.engine.Engine;
 
 public class MainActivity extends AppCompatActivity {
     Engine engine;

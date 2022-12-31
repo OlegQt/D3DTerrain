@@ -1,9 +1,8 @@
-package com.example.surfviewvectors.engine;
+package com.example.Terrain.engine;
 
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 
@@ -32,7 +31,6 @@ public class Engine {
                         }
                     }
                 } else {
-                    model.setScreenSize(canvas.getWidth(),canvas.getHeight());
                     long elapsedTime = System.nanoTime() - time;
                     model.update(elapsedTime);
                     render.draw(canvas, model);

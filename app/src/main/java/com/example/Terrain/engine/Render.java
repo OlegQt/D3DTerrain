@@ -1,9 +1,11 @@
-package com.example.surfviewvectors.engine;
+package com.example.Terrain.engine;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
+
+import java.util.Iterator;
 
 public class Render {
     private final Paint paint;
@@ -17,7 +19,7 @@ public class Render {
         paint.setColor(Color.DKGRAY);
         canvas.drawRect(0.0f,0.0f,canvas.getWidth(),canvas.getHeight(),this.paint);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(10.0f);
+        paint.setStrokeWidth(2.0f);
         paint.setColor(Color.BLACK);
         canvas.drawRect(0.0f,0.0f,canvas.getWidth(),canvas.getHeight(),this.paint);
     }
@@ -26,13 +28,16 @@ public class Render {
         this.cls(canvas);
 
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(20.0f);
+        paint.setStrokeWidth(4.0f);
         paint.setColor(Color.WHITE);
-        // For each statement below
 
-        for(Point pP : model.getPointsArray())
-        {
-            canvas.drawPoint(pP.x,pP.y,paint);
+        // For each statement below
+        ComplexPoint pCp = null;
+        Iterator<ComplexPoint> iter = model.getPointsArray().iterator();
+        while (iter.hasNext()){
+            pCp = iter.next();
+            Point point = pCp.translatePointToScreen(canvas.getWidth(),canvas.getHeight());
+            canvas.drawPoint(point.x,point.y,paint);
         }
     }
 }
