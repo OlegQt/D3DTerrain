@@ -13,9 +13,9 @@ public class Terrain {
     public Terrain(int rowCount) {
         this.rowCount = rowCount;
         grid = new ArrayList<>();
-        float step = 1.0f/rowCount;
-        for (int x = 0; x < rowCount; x++) {
-            for (int y = 0; y < rowCount; y++) {
+        float step = 1.0f/(rowCount-1);
+        for (int y = 0; y < rowCount; y++) {
+            for (int x = 0; x < rowCount; x++) {
                 grid.add(new ComplexPoint(x*step-0.5f, y*step-0.5f, 1));
             }
         }
@@ -43,5 +43,9 @@ public class Terrain {
 
         }
         return str;
+    }
+    public void findSuburb(float x,float y)
+    {
+
     }
 }

@@ -10,10 +10,12 @@ import java.util.Locale;
 
 public class ComplexPoint extends PointF {
     protected float z;
+    protected float param;
 
     public ComplexPoint(float x, float y, float z) {
         super(x, y);
         this.z = z;
+        this.param=0;
     }
 
     public Point translatePointToScreen(float W, float H) {
@@ -30,6 +32,10 @@ public class ComplexPoint extends PointF {
 
     public static Point translatePointToScreen(ComplexPoint point, float hW, float hH) {
         return point.translatePointToScreen(hW, hH);
+    }
+
+    public float getParam() {
+        return param;
     }
 
     @NonNull

@@ -31,13 +31,21 @@ public class Render {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(6.0f);
         paint.setColor(Color.WHITE);
+        paint.setTextSize(25);
 
         // For each statement below
         ComplexPoint pCp = null;
-        for (ComplexPoint complexPoint : model.getTerrainList()) {
-            pCp = complexPoint;
+        for (int i = 0;i<model.getTerrainList().size();i++) {
+            pCp = model.getTerrainList().get(i);
             Point point = pCp.translatePointToScreen(canvas.getWidth(), canvas.getHeight());
+
+            if(pCp.getParam()==1) paint.setColor(Color.RED);
+            else paint.setColor(Color.WHITE);
+
+            paint.setStrokeWidth(10);
             canvas.drawPoint(point.x, point.y, paint);
+            paint.setStrokeWidth(1);
+            canvas.drawText(String.valueOf(i),point.x+6.0f,point.y,paint);
         }
 
     }

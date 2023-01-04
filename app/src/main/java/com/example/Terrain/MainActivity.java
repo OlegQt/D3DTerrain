@@ -2,6 +2,7 @@ package com.example.Terrain;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
@@ -9,12 +10,14 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.Terrain.engine.Engine;
+import com.example.Terrain.engine.MySurfView;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     Engine engine;
-    SurfaceView surface;
+    //SurfaceView surface;
+    MySurfView surface;
     TextView txtInfo;
 
 
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
             String strPosition = "X=%.1f  Y=%.1f";
             strPosition = String.format(Locale.getDefault(), strPosition, x, y);
             txtInfo.setText(strPosition);
+            view.performClick();
             return false;
         });
     }

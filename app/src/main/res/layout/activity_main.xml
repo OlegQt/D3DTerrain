@@ -17,12 +17,12 @@
          />
 
 
-    <SurfaceView
+    <com.example.Terrain.engine.MySurfView
         android:id="@+id/surface"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
 
-    </SurfaceView>
+    </com.example.Terrain.engine.MySurfView>
 
 </LinearLayout>
