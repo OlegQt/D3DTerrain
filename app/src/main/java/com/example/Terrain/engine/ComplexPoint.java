@@ -4,6 +4,10 @@ import android.annotation.SuppressLint;
 import android.graphics.Point;
 import android.graphics.PointF;
 
+import androidx.annotation.NonNull;
+
+import java.util.Locale;
+
 public class ComplexPoint extends PointF {
     protected float z;
 
@@ -28,12 +32,10 @@ public class ComplexPoint extends PointF {
         return point.translatePointToScreen(hW, hH);
     }
 
-    @SuppressLint("DefaultLocale")
+    @NonNull
     @Override
     public String toString() {
-        String str = "[%.1f ; %.1f] ";
-        str=String.format(str,x,y);
-        return str;
+        return String.format(Locale.getDefault(),"[%.1f ; %.1f] ",x,y);
         //return super.toString();
     }
 }

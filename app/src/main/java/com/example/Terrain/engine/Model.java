@@ -1,30 +1,27 @@
 package com.example.Terrain.engine;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Model {
     private ArrayList<ComplexPoint> pointArray;
     private final int rows = 100;
     private final int colomns = 100;
     private final float zMax = 2.0f;
+    private String renderParam;
+    protected final Terrain terrain;
+
+    public String getRenderParam() {
+        return renderParam;
+    }
 
     public Model() {
         pointArray = new ArrayList<>();
-        Terrain terrain = new Terrain(10);
+        terrain = new Terrain(100);
+        //renderParam=new String("grid");
+        renderParam=new String("Terrain");
+        pointArray.add(new ComplexPoint(0.0f,0.0f,1.0f));
 
-        //pointArray.add(new ComplexPoint(0.5f,0.0f,1.0f));
-        float xStep = 1.0f / rows;
-        float yStep = 1.0f / colomns;
-        float zStep = zMax/(float)colomns;
-
-        ComplexPoint pCp = null;
-        for (int x = -rows; x <= rows; x++) {
-            for (int y = 0; y <= colomns; y++) {
-                pCp = new ComplexPoint(x * xStep, -y * yStep, zMax-(y*zStep));
-                pointArray.add(pCp);
-            }
-        }
-        xStep = 0;
     }
 
     // Add Random point into ArrayList
@@ -33,7 +30,8 @@ public class Model {
     }
 
     // Return full ArrayList of points
-    public ArrayList<ComplexPoint> getPointsArray() {
-        return this.pointArray;
+    public List<ComplexPoint> getTerrainList() {
+        return this.terrain.toPoints();
     }
+
 }

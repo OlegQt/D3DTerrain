@@ -13,6 +13,7 @@ public class Engine {
     private SurfaceHolder surfaceHolder;
     private SurfaceHolder.Callback callBack;
 
+
     private boolean stopped;
     long time = System.nanoTime();
 
@@ -69,18 +70,12 @@ public class Engine {
             public void surfaceDestroyed(@NonNull SurfaceHolder surfaceHolder) {
                 Engine.this.surfaceHolder = null;
             }
+
+
         };
         surface.getHolder().addCallback(callBack);
 
 
-    }
-
-    public String GetCurrentPointsCount() {
-        if(this.model!=null){
-            int count = model.getPointsArray().size();
-            return String.valueOf(count);
-        }
-        else return "Error";
     }
 
 }

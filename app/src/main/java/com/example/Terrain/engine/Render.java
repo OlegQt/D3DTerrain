@@ -4,6 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
+import android.graphics.PointF;
 
 import java.util.Iterator;
 
@@ -28,16 +29,20 @@ public class Render {
         this.cls(canvas);
 
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(4.0f);
+        paint.setStrokeWidth(6.0f);
         paint.setColor(Color.WHITE);
 
         // For each statement below
         ComplexPoint pCp = null;
-        Iterator<ComplexPoint> iter = model.getPointsArray().iterator();
-        while (iter.hasNext()){
-            pCp = iter.next();
-            Point point = pCp.translatePointToScreen(canvas.getWidth(),canvas.getHeight());
-            canvas.drawPoint(point.x,point.y,paint);
+        for (ComplexPoint complexPoint : model.getTerrainList()) {
+            pCp = complexPoint;
+            Point point = pCp.translatePointToScreen(canvas.getWidth(), canvas.getHeight());
+            canvas.drawPoint(point.x, point.y, paint);
         }
+
+    }
+
+    public void drawComplexPoint(ComplexPoint point){
+
     }
 }
