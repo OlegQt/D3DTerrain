@@ -17,7 +17,7 @@ public class Model {
 
     public Model() {
         pointArray = new ArrayList<>();
-        terrain = new Terrain(10);
+        terrain = new Terrain(100);
         //renderParam=new String("grid");
         renderParam=new String("Terrain");
         pointArray.add(new ComplexPoint(0.0f,0.0f,1.0f));
@@ -32,6 +32,11 @@ public class Model {
     // Return full ArrayList of points
     public List<ComplexPoint> getTerrainList() {
         return this.terrain.toPoints();
+    }
+
+    // On Touch Listener
+    public void onTouch(float x,float y){
+        this.terrain.onTouch(x,y);
     }
 
 }

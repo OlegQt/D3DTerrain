@@ -45,7 +45,8 @@ public class Render {
             paint.setStrokeWidth(10);
             canvas.drawPoint(point.x, point.y, paint);
             paint.setStrokeWidth(1);
-            canvas.drawText(String.valueOf(i),point.x+6.0f,point.y,paint);
+            //canvas.drawText(String.valueOf(i),point.x+6.0f,point.y,paint);
+            //canvas.drawText(pCp.toString(),point.x+6.0f,point.y,paint);
         }
 
     }

@@ -18,6 +18,13 @@ public class ComplexPoint extends PointF {
         this.param=0;
     }
 
+    public float getDistance(float x2, float y2){
+        double a = Math.pow(x2 - this.x, 2);
+        double b = Math.pow(y2 - this.y, 2);
+        double distance = Math.sqrt(a + b);
+        return (float) distance;
+    }
+
     public Point translatePointToScreen(float W, float H) {
         float hW = W / 2;
         float hH = H / 2;

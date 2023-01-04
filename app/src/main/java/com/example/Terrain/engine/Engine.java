@@ -78,4 +78,8 @@ public class Engine {
 
     }
 
+    public Model getModel(){
+        return this.model;
+    }
+
 }
