@@ -19,7 +19,7 @@ public class Terrain {
             for (int x = 0; x < rowCount; x++) {
                 grid.add(new ComplexPoint(x * step - 0.5f, y * step - 0.5f, 1.0f));
             }
-            deep+=0.01f;
+
         }
         //grid.get(75).param = 1;
     }
@@ -52,9 +52,9 @@ public class Terrain {
         for (ComplexPoint pCp : grid) {
 
             float distance = pCp.getDistance(x-0.5f, y+0.5f);
-            if (distance < 0.1f) {
+            if (distance < 0.05f) {
                 pCp.param = 1;
-                pCp.z-=0.003f;
+                pCp.z+=0.001f;
             }
             else pCp.param = 0;
         }

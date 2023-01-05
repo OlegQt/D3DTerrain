@@ -17,7 +17,7 @@ public class Model {
 
     public Model() {
         pointArray = new ArrayList<>();
-        terrain = new Terrain(100);
+        terrain = new Terrain(50);
         //renderParam=new String("grid");
         renderParam=new String("Terrain");
         pointArray.add(new ComplexPoint(0.0f,0.0f,1.0f));

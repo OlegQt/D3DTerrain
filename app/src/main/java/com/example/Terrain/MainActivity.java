@@ -35,11 +35,12 @@ public class MainActivity extends AppCompatActivity {
         surface.setOnTouchListener((view, motionEvent) -> {
             float x = motionEvent.getX();
             float y = motionEvent.getY();
-            String strPosition = "X=%.1f  Y=%.1f";
+            String strPosition = "X=%.1f  Y=%.1f   ";
             String absPos = "X=%.1f  Y=%.1f";
             strPosition = String.format(Locale.getDefault(), strPosition, x, y);
             absPos = String.format(Locale.getDefault(), absPos, x/surface.getWidth() - 0.5f, (y-0.5f)/surface.getHeight());
-            txtInfo.setText(strPosition+"  "+absPos);
+            strPosition=strPosition.concat(absPos);
+            txtInfo.setText(strPosition);
             engine.getModel().onTouch(x/surface.getWidth(),-y/surface.getHeight());
             view.performClick();
             return false;
